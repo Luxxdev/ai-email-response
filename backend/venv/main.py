@@ -177,6 +177,10 @@ class AIService:
 
 ai_service = AIService()
 
+@app.get("/")
+async def root():
+    return {"message": "Email AI Classifier API is running!"}
+
 @app.post("/classify", response_model=EmailResponse)
 async def classify_email(request: EmailRequest):
     start_time = datetime.now()
@@ -215,13 +219,13 @@ async def classify_email(request: EmailRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    
+
     port = int(os.environ.get("PORT", 8000))
 
     uvicorn.run(
         "main:app", 
         host="0.0.0.0", 
-        port=8000, 
-        reload=True,
+        port=int(os.environ.get("PORT", 8000)), 
+        reload=False,
         log_level="info"
     )
