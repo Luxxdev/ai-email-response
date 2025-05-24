@@ -23,7 +23,7 @@ app = FastAPI(title="Email AI Classifier", version="1.0.0")
 # Configurar CORS para React
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:3000", "http://127.0.0.1:5173", 'https://ai-email-response.vercel.app/'],
+    allow_origins=["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:3000", "http://127.0.0.1:5173", 'https://ai-email-response.vercel.app','https://ai-email-response.vercel.app/classify', 'https://ai-email-response.vercel.app/health' ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
