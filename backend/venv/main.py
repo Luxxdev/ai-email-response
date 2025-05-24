@@ -178,8 +178,14 @@ class AIService:
 ai_service = AIService()
 
 @app.get("/")
+@app.head("/")
 async def root():
     return {"message": "Email AI Classifier API is running!"}
+
+@app.get("/health")
+@app.head("/health")  
+async def health_check():
+    return {"status": "healthy", "service": "email-classifier"}
 
 @app.post("/classify", response_model=EmailResponse)
 async def classify_email(request: EmailRequest):
