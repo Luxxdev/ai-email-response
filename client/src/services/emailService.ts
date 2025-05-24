@@ -1,7 +1,7 @@
 import type { ApiError, EmailRequest, EmailResponse } from '../types/email'
 
 // const API_BASE_URL = 'http://localhost:8000'
-const API_BASE_URL = 'https://ai-email-response.onrender.com/'
+const API_BASE_URL = 'https://ai-email-response.onrender.com'
 
 class EmailService {
   private async fetchWithErrorHandling<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
