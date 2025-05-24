@@ -7,3 +7,4 @@ transformers==4.35.2
 torch==2.6.0
 pydantic==2.5.0
 httpx==0.25.2
+requests==2.31.0
